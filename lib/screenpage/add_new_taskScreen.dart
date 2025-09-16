@@ -47,7 +47,7 @@ class _AddNewTaskscreenState extends State<AddNewTaskscreen> {
                     controller: _descriptionediting,
                     maxLines: 6,
                     decoration: InputDecoration(
-                      hintText: 'Description',
+                      hintText: 'Description of Task',
                     ),
                   ),
                   const SizedBox(height: 8),
