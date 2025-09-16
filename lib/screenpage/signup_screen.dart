@@ -1,23 +1,22 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:login_page_design/widgets/Screenbackground.dart';
+import 'login_page.dart';
 
 class Signupscreen extends StatefulWidget {
   const Signupscreen({super.key});
 
   @override
   State<Signupscreen> createState() => _SignupscreenState();
-
 }
 
 class _SignupscreenState extends State<Signupscreen> {
-
   final TextEditingController _emailTEcontroller = TextEditingController();
   final TextEditingController _passwordTEcontroller = TextEditingController();
   final TextEditingController _firstnameTEcontroller = TextEditingController();
   final TextEditingController _lastnameTEcontroller = TextEditingController();
   final TextEditingController _mobileTEcontroller = TextEditingController();
-  final GlobalKey <FormState> _formkey = GlobalKey <FormState>();
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class _SignupscreenState extends State<Signupscreen> {
       body: Screenbackground(
         child: Center(
           child: SingleChildScrollView(
-            child: Padding( 
+            child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Form(
                 key: _formkey,
@@ -40,46 +39,32 @@ class _SignupscreenState extends State<Signupscreen> {
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: _emailTEcontroller,
-                      decoration: InputDecoration(
-                        hintText: 'Email',
-
-                      ),
+                      decoration: InputDecoration(hintText: 'Email'),
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: _firstnameTEcontroller,
-                      decoration: InputDecoration(
-                        hintText: 'First Name',
-
-                      ),
-                    ),const SizedBox(height: 20),
+                      decoration: InputDecoration(hintText: 'First Name'),
+                    ),
+                    const SizedBox(height: 20),
                     TextFormField(
                       controller: _lastnameTEcontroller,
-                      decoration: InputDecoration(
-                        hintText: 'Last Name',
-
-                      ),
+                      decoration: InputDecoration(hintText: 'Last Name'),
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
                       controller: _mobileTEcontroller,
-                      decoration: InputDecoration(
-                        hintText: 'Mobile',
-
-                      ),
+                      decoration: InputDecoration(hintText: 'Mobile'),
                     ),
-                    SizedBox(height: 8,),
+                    SizedBox(height: 8),
                     TextFormField(
                       controller: _passwordTEcontroller,
                       obscureText: true,
-                      decoration: InputDecoration(
-                          hintText:'Password',
-                      ),
+                      decoration: InputDecoration(hintText: 'Password'),
                     ),
-                    SizedBox(height: 8,),
+                    SizedBox(height: 8),
                     FilledButton(
-
-                      onPressed: () {},
+                      onPressed: _onTapLoginbutton,
                       child: Icon(Icons.arrow_circle_right_outlined),
                     ),
                     const SizedBox(height: 10),
@@ -91,9 +76,12 @@ class _SignupscreenState extends State<Signupscreen> {
                         children: [
                           TextSpan(
                             text: 'Login',
-                            style: TextStyle(fontWeight: FontWeight.bold,
-                            color: Colors.green),
-                            recognizer: TapGestureRecognizer()..onTap = _onTapLoginbutton,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = _onTapLoginbutton,
                           ),
                         ],
                       ),
@@ -107,8 +95,12 @@ class _SignupscreenState extends State<Signupscreen> {
       ),
     );
   }
-  void _onTapLoginbutton(){
-    Navigator.pop(context);
+
+  void _onTapLoginbutton() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => LoginPage()),
+    );
   }
 
   @override
