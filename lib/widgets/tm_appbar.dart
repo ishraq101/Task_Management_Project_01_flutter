@@ -4,13 +4,14 @@ import '../screenpage/update_Profile_Screen.dart';
 
 class TMappbar extends StatelessWidget implements PreferredSizeWidget {
   const TMappbar({
-    super.key, this.updateprofile,
+    super.key, this.updateprofile, required bool automaticallyImplyLeading,
   });
   final bool? updateprofile;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
         backgroundColor: Colors.green,
         title: GestureDetector(
           onTap: () {

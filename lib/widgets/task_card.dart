@@ -1,11 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TaskCard extends StatelessWidget {
-  const TaskCard({
-    super.key,
-  });
 
+class TaskCard extends StatelessWidget {
+  final String chipText;
+  final Color chipColor;
+  final Color chipTextColor;
+  const TaskCard({
+    super.key, required this.chipText, required this.chipColor, required this.chipTextColor,
+  });
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -25,11 +27,12 @@ class TaskCard extends StatelessWidget {
           ),),
           Row(
             children: [
-              Chip(label: Text('New'),backgroundColor: Colors.blue,
-                labelStyle: TextStyle(color: Colors.white),
-                padding: EdgeInsets.symmetric(horizontal: 16),
+              Chip(label: Text(chipText),
+                backgroundColor: chipColor,
+                labelStyle: TextStyle(color: chipTextColor),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24)
+                  borderRadius: BorderRadius.circular(24),
                 ),),
               Spacer(),
               IconButton(onPressed: () {}, icon: Icon(Icons.edit,color: Colors.grey,)),

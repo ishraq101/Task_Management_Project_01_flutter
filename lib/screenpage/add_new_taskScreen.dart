@@ -20,7 +20,9 @@ class _AddNewTaskscreenState extends State<AddNewTaskscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TMappbar(),
+      appBar: TMappbar(
+        automaticallyImplyLeading: false,
+      ),
       body: Screenbackground(
         child: SingleChildScrollView(
           child: Padding(

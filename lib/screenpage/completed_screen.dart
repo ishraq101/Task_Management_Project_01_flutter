@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/task_card.dart';
 
-class ProgressTaskScreen extends StatefulWidget {
-  const ProgressTaskScreen({super.key});
+class CompletedScreen extends StatefulWidget {
+  const CompletedScreen({super.key});
 
   @override
-  State<ProgressTaskScreen> createState() => _ProgressTaskScreenState();
+  State<CompletedScreen> createState() => _CompletedScreenState();
 }
 
-class _ProgressTaskScreenState extends State<ProgressTaskScreen> {
+class _CompletedScreenState extends State<CompletedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +22,9 @@ class _ProgressTaskScreenState extends State<ProgressTaskScreen> {
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return TaskCard(
-                    chipText: 'progress',
-                    chipColor: Colors.blue,
+                    chipColor: Colors.green,
                     chipTextColor: Colors.white,
+                    chipText: 'Completed',
                   );
                 },
                 separatorBuilder: (context, index) {

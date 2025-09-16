@@ -3,6 +3,8 @@ import 'package:login_page_design/screenpage/New_Task_Screen.dart';
 import 'package:login_page_design/screenpage/progrees_task_Screen.dart';
 
 import '../widgets/tm_appbar.dart';
+import 'cancelled_screen.dart';
+import 'completed_screen.dart';
 
 class Home1stPage extends StatefulWidget {
   const Home1stPage({super.key});
@@ -17,15 +19,15 @@ class _Home1stPageState extends State<Home1stPage> {
   final List<Widget> _screen = [
     NewTaskScreen(),
     ProgressTaskScreen(),
-    NewTaskScreen(),
-    NewTaskScreen(),
+    CancelledScreen(),
+    CompletedScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TMappbar(
-
+          automaticallyImplyLeading :false,
       ),
       body: _screen[_selectedIndex],
       bottomNavigationBar: NavigationBar(

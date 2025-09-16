@@ -30,6 +30,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TMappbar(
+        automaticallyImplyLeading: false,
         updateprofile: true,
       ),
       body: Screenbackground(
